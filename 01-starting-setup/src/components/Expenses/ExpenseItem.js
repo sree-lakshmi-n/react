@@ -6,20 +6,20 @@ import { useState } from "react";
 
 function ExpenseItem(props) {
   // let title = props.title;
-  const [title, setTitle] = useState(props.title);
-  const handleClick = () => {
-    // title = "Updated";
-    // console.log("Hi!");
-    setTitle("Updated!");
-  };
+  // const [title, setTitle] = useState(props.title);
+  // const handleClick = () => {
+  //   // title = "Updated";
+  //   // console.log("Hi!");
+  //   setTitle("Updated!");
+  // };
   return (
     <Card className="expense-item">
       <ExpenseDate date={props.date} />
       <div className="expense-item__description">
-        <h2>{title}</h2>
+        <h2>{props.title}</h2>
         <div className="expense-item__price">${props.amount}</div>
       </div>
-      <button onClick={handleClick}>Change Title</button>
+      {/* <button onClick={handleClick}>Change Title</button> */}
     </Card>
   );
 }
