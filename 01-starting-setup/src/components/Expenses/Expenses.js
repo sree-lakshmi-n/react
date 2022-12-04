@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
-import ExpenseItem from "./ExpenseItem";
 import "./Expenses.css";
 import Card from "../UI/Card";
 import ExpensesFilter from "./ExpensesFilter";
+import ExpensesList from "./ExpensesList";
 
 const Expenses = (props) => {
   const [filteredYear, setfilteredYear] = useState("2020");
@@ -19,17 +19,17 @@ const Expenses = (props) => {
       - Makes JSX code lean
       - More readable
   */
-  let expensesContent = <p>No expenses found.</p>;
-  if (filteredExpenses.length > 0) {
-    expensesContent = filteredExpenses.map((expense) => (
-      <ExpenseItem
-        key={expense.id}
-        title={expense.title}
-        amount={expense.amount}
-        date={expense.date}
-      ></ExpenseItem>
-    ));
-  }
+  // let expensesContent = <p>No expenses found.</p>;
+  // if (filteredExpenses.length > 0) {
+  //   expensesContent = filteredExpenses.map((expense) => (
+  //     <ExpenseItem
+  //       key={expense.id}
+  //       title={expense.title}
+  //       amount={expense.amount}
+  //       date={expense.date}
+  //     ></ExpenseItem>
+  //   ));
+  // }
   return (
     <div>
       <Card className="expenses">
@@ -37,13 +37,14 @@ const Expenses = (props) => {
           select={filteredYear}
           onChangeFilter={filterChangeHandler}
         />
+        <ExpensesList items={filteredExpenses} />
         {/* Conditional content 
         3. Using if condition in component function,
         outside return statement 
         - Makes JSX code lean 
         - More readable 
         */}
-        {expensesContent}
+        {/* {expensesContent} */}
         {/* Conditional content
         1. Using ternary operators
         */}
