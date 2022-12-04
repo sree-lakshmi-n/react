@@ -24,7 +24,7 @@ const Expenses = (props) => {
         {/* Conditional content
         1. Using ternary operators
         */}
-        {filteredExpenses.length === 0 ? (
+        {/* {filteredExpenses.length === 0 ? (
           <p>No expenses found.</p>
         ) : (
           filteredExpenses.map((expense) => (
@@ -35,7 +35,20 @@ const Expenses = (props) => {
               date={expense.date}
             ></ExpenseItem>
           ))
-        )}
+        )} */}
+        {/* Conditional content
+        2. Using AND short circuiting
+        */}
+        {/* {filteredExpenses.length === 0 && <p>No expenses found.</p>}
+        {filteredExpenses.length > 0 &&
+          filteredExpenses.map((expense) => (
+            <ExpenseItem
+              key={expense.id}
+              title={expense.title}
+              amount={expense.amount}
+              date={expense.date}
+            ></ExpenseItem>
+          ))} */}
         {/* <ExpenseItem
           title={props.items[0].title}
           amount={props.items[0].amount}
