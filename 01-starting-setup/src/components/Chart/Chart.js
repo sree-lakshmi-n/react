@@ -1,0 +1,18 @@
+import "./Chart.css";
+import ChartBar from "./ChartBar";
+
+const Chart = (props) => {
+  return (
+    <div className="chart">
+      {props.dataPoints.map((dataPoint) => {
+        <Chart
+          key={props.label}
+          value={props.value}
+          max={null}
+          month={props.label}
+        />;
+      })}
+    </div>
+  );
+};
+export default Chart;
